@@ -96,9 +96,9 @@ Clearfix
 
 
 /* ==========================================================================
-Sticky Footer
+Sticky Footer -- If so desired
 ========================================================================== */
-
+/*
 .page {
 	min-height: 100%; 
 	position: relative;
@@ -118,7 +118,7 @@ footer {
 	footer { position: relative; }
 	main { padding-bottom: 0; }
 }
-
+*/
 
 /* ==========================================================================
 Page and Container
@@ -171,23 +171,25 @@ nav .menu, nav .submenu {
 }
 nav .top_menu {
 	position: relative;
-	z-index: 200; /* removed height. height should be determined by menu items */
+	z-index: 200;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 nav .top_menu li {
 	position: relative;
-	z-index: 200; /* removed float left to accomodate inline-block */
+	z-index: 200;
 	display: inline-block;
 }
 nav .top_menu li a {
-	z-index: 200; /* removed float left to accomodate inline-block */
-	display: inline-block; /* removed height. target area should be based on padding */
+	z-index: 200;
+	display: inline-block;
 	padding: 0 2rem;
-	font-size: 1.6rem; /* removed line-height */
+	font-size: 1.6rem;
 	text-decoration: none;
 }
+
+nav .top_menu li:last-child a { padding-right: 0; }
 
 /* nav .top_menu li.top_menu_active a ///* remove */
 nav .top_menu li a:hover,
@@ -217,8 +219,7 @@ nav .top_menu ul.sub li a {
 	width: 100%;
 	height: auto;
 	padding: 0.5rem 2rem;
-	font-size: 1.4rem; /* should be 'font-size' */
-	/* removed line-height. target area should be based on padding */
+	font-size: 1.4rem;
 }
 
 nav .top_menu ul.sub li a:hover,
@@ -279,6 +280,10 @@ footer .vsi {
 	white-space: nowrap;
 }
 
+/* ==========================================================================
+Form Styles
+========================================================================== */
+
 /* a better-looking button */
 .form_buttons button,
 .form_buttons input[type="submit"],
@@ -327,6 +332,24 @@ Tablet view (less than 800 pixels) -- this may change based on breakpoint of nav
 ========================================================================== */
 @media all and (max-width:800px) {
 	/* placeholder for media query styling */
+	
+	nav .menu {
+		display: block;
+		cursor: pointer;
+	}
+
+	nav .top_menu {
+		display: none;
+		float: left;
+		width: 100%;
+	}
+
+	nav .top_menu li { width: 100%; }
+
+	nav .top_menu li a {
+		width: 100%;
+		padding: 1% 0;
+	}
 }
 
 /* ==========================================================================
