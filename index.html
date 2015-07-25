@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Homepage - HTML Wireframes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-language" content="en">
+
+	<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+	
+	<meta class="external_files">
+	<script type="text/javascript">
+		$('.external_files').load( "./includes/js_css_files.html" );
+	</script>
+</head>
+
+
+<body>
+
+	<div class="page">
+		<header>
+			<script type="text/javascript">
+				$('header').load( "./includes/header.html" );
+			</script>
+		</header>
+
+		<main class="main">
+			<script type="text/javascript">
+				$('.main').load( "./includes/home_content.html" );
+			</script>
+		</main>
+
+		<footer class="cf">
+			<script type="text/javascript">
+				$('footer').load( "./includes/footer.html" );
+			</script>
+		</footer>
+	</div>
+</body>
+</html>

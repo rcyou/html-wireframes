@@ -1,0 +1,344 @@
+@charset "utf-8";
+/* ==========================================================================
+Global CSS - Visionary Site OnCall (visionary.com)
+========================================================================== */
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+body {
+	height: 100%;
+	font-size: 1.6rem;
+	font-family: sans-serif;
+	line-height: 1.5;
+	color: #000;
+	background-color: #fff;
+
+
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); /* smooths type in all browsers */
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	border: 0;
+	display: block;
+}
+
+a { /* insert CSS here */ }
+
+/* add high visibility focus indicators */
+a:hover, a:focus { /* insert CSS here */ }
+
+
+h1, h2, h3 {
+	margin: 1rem 0;
+	padding: 0;
+}
+
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.4rem; }
+
+/* add h4, h5, h6 */
+h4 { font-size: 2.1rem; }
+h5 { font-size: 1.6rem; }
+h6 { font-size: 1.4rem; }
+
+sup, sub {
+	font-size: 70%;
+	font-weight: bold;
+}
+sup { vertical-align: super; }
+sub { vertical-align: sub; }
+
+label.req {
+	font-weight: bold;
+	padding-right: .5rem;
+}
+
+label.req:after {
+	content: '*';
+	color: #c00;
+	margin-left: .25rem;
+	font-family: sans-serif;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	border: 0;
+	background-color: #ccc;
+}
+
+/* ==========================================================================
+Clearfix
+========================================================================== */
+
+/*
+.cf:before, .cf:after {
+	content: ' ';
+	display: table;
+}
+.cf:after {
+	clear: both;
+}
+.cf {
+	*zoom: 1;
+}
+*/
+
+
+/* ==========================================================================
+Sticky Footer
+========================================================================== */
+
+.page {
+	min-height: 100%; 
+	position: relative;
+}
+
+main { padding-bottom: 60px; }
+
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+@media all and (max-width:440px) {
+	footer { position: relative; }
+	main { padding-bottom: 0; }
+}
+
+
+/* ==========================================================================
+Page and Container
+========================================================================== */
+.page {
+	width: 100%;
+	margin:0 auto;
+	padding: 0;
+}
+
+.container {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 2%;
+	max-width: 1000px; /*set desired width*/
+}
+
+/* ==========================================================================
+Header (contains navigation, logo, etc)
+========================================================================== */
+header {
+	position: relative;
+	z-index: 30;
+	overflow: visible;
+	background-color: #ccc;
+}
+header .logo {
+	/* insert CSS here */
+	background-color: #333;
+	min-height: 50px;
+}
+
+header .logo img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+header nav {
+	/* insert CSS here */
+	text-align: right;
+}
+
+/* ==========================================================================
+Top Menu Navigation (drop-down menu)
+========================================================================== */
+nav .menu, nav .submenu {
+	display: none;
+}
+nav .top_menu {
+	position: relative;
+	z-index: 200; /* removed height. height should be determined by menu items */
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav .top_menu li {
+	position: relative;
+	z-index: 200; /* removed float left to accomodate inline-block */
+	display: inline-block;
+}
+nav .top_menu li a {
+	z-index: 200; /* removed float left to accomodate inline-block */
+	display: inline-block; /* removed height. target area should be based on padding */
+	padding: 0 2rem;
+	font-size: 1.6rem; /* removed line-height */
+	text-decoration: none;
+}
+
+/* nav .top_menu li.top_menu_active a ///* remove */
+nav .top_menu li a:hover,
+nav.top_menu li a:focus {
+	/* insert CSS here */
+}
+
+nav .top_menu ul.sub {
+	position: absolute;
+	z-index: 201;
+	top: 3rem;
+	left: 0;
+	display: none;
+	width: 18rem;
+	height: auto;
+	padding: 0.5rem 0;
+	list-style: none;
+	background-color: #ccc;
+}
+
+nav .top_menu ul.sub li {
+	width: 100%;
+	height: auto;
+}
+
+nav .top_menu ul.sub li a {
+	width: 100%;
+	height: auto;
+	padding: 0.5rem 2rem;
+	font-size: 1.4rem; /* should be 'font-size' */
+	/* removed line-height. target area should be based on padding */
+}
+
+nav .top_menu ul.sub li a:hover,
+nav .top_menu ul.sub li a:focus {
+	/* insert styling here */
+}
+
+
+/* ==========================================================================
+Body / Contents
+========================================================================== */
+main {
+	position: relative;
+}
+
+main p {
+	margin: 2rem 0;
+}
+
+/* ==========================================================================
+Arbitrary Styles for Wireframes -- ! Delete these when done !
+========================================================================== */
+
+.banner {
+	padding: 15% 0;
+}
+
+.subbanner {
+	padding: 15% 0;
+}
+
+.content {
+	height: 300px;
+}
+
+/* ==========================================================================
+Footer (Lower navigation, copyright, etc)
+========================================================================== */
+footer {
+	background-color: #ccc;
+	font-size: 1.2rem;
+}
+
+footer .address, footer .legal {
+	display: block;
+	width: 50%;
+}
+
+footer .vsi {
+	float: right;
+	clear: right;
+	display: block;
+	overflow: hidden;
+	width: 120px;
+	height: 30px;
+	background: no-repeat url("https://static.visionary.com/siteoncall/siteoncall-footer.png");
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+/* a better-looking button */
+.form_buttons button,
+.form_buttons input[type="submit"],
+.form_buttons input[type="reset"] {
+	margin-right: 1rem;
+	padding: 1rem 2rem;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 0.4rem;
+	-moz-border-radius: 0.4rem;
+	-webkit-border-radius: 0.4rem;
+	font-size: 1.6rem;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+/* add high visibility focus indicators */
+.form_buttons button:hover,
+.form_buttons button:focus,
+.form_buttons button:active,
+.form_buttons input[type="submit"]:hover,
+.form_buttons input[type="submit"]:focus,
+.form_buttons input[type="submit"]:active,
+.form_buttons input[type="reset"]:hover,
+.form_buttons input[type="reset"]:focus,
+.form_buttons input[type="reset"]:active {
+	background-color: #aaa;
+}
+
+.form_buttons button:last-child,
+.form_buttons input[type="submit"]:last-child,
+.form_buttons input[type="reset"]:last-child {
+	margin-right: 0;
+}
+
+
+/* ==========================================================================
+Desktop view (less than 1000 pixels) -- adjust for page/container max-width
+========================================================================== */
+@media all and (max-width:1000px) {
+	/* placeholder for media query styling */
+}
+
+/* ==========================================================================
+Tablet view (less than 800 pixels) -- this may change based on breakpoint of nav menu
+========================================================================== */
+@media all and (max-width:800px) {
+	/* placeholder for media query styling */
+}
+
+/* ==========================================================================
+Mobile view (less than 520 pixels)
+========================================================================== */
+@media all and (max-width:520px) {
+	/* placeholder for media query styling */
+}
+
+/* ==========================================================================
+Mobile view (less than 440 pixels)
+========================================================================== */
+@media all and (max-width:440px) {
+	/* placeholder for media query styling */
+}

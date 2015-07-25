@@ -1,0 +1,79 @@
+*[class*="block"] {
+	text-align: center;
+	font-size: 2rem;
+	background-color: #AAA;
+}
+*[class*="band"] { background-color: #888; }
+
+section, *[class*="section"] {
+	overflow: hidden;
+	width: 100%;
+	padding: 1% 0;
+	position: relative;
+}
+
+*[class*="half"],
+*[class*="third"],
+*[class*="quarter"],
+*[class*="two-thirds"],
+*[class*="three-fourths"] {
+	margin: 0 1%;
+	padding: 2%;
+}
+
+*[class*="full"] { padding: 2%; }
+
+*[class*="first"] { margin-left: 0; }
+*[class*="last"] { margin-right: 0; }
+*[class*="middle"] {
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+*[class*="full"] {
+	float: left;
+	width: 100%;
+}
+
+*[class*="half"] {
+	float: left;
+	width: 49%;
+}
+
+*[class*="third"] {
+	float: left;
+	width: 32%;
+}
+
+*[class*="two-thirds"] {
+	float: left;
+	width: 66%;
+}
+
+*[class*="quarter"] {
+	float: left;
+	width: 23.5%;
+}
+
+*[class*="three-fourths"] {
+	float: left;
+	width: 74.5%;
+}
+
+
+
+
+
+/* ==========================================================================
+Mobile view (less than 440 pixels)
+========================================================================== */
+@media all and (max-width:440px) {
+	*[class*="half"],
+	*[class*="third"],
+	*[class*="quarter"],
+	*[class*="two-thirds"],
+	*[class*="three-fourths"] {
+		width: 100%;
+		margin: 0 0 2% 0;
+	}
+}
