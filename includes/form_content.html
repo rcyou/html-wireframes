@@ -1,0 +1,136 @@
+<section>
+  <div class="container">
+    <form action="contact.html" class="cf" method="post">
+    
+    <!-- 
+      <div class="form_error full">
+       <strong>Oops! We found an error:</strong>
+       
+       <ul>
+        <li>First Name is required.</li>
+        <li>Last Name is required.</li>
+        <li>Email Address is required.</li>
+        <li>Message is required.</li>
+       </ul>
+      </div>
+    -->
+      
+      <fieldset class="full">
+        <label for="recipient">Contact:</label><br>
+        <select  id="recipient" name="recipient">
+          <option value="general" selected>General</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="half first">
+        <label for="first_name" class="req">First Name:</label><br>
+        <input type="text"  id="first_name" name="first_name" value="" maxlength="25" placeholder="Your First Name">
+      </fieldset>
+
+      <fieldset class="half last">
+        <label for="last_name" class="req">Last Name:</label><br>
+        <input type="text"  id="last_name" name="last_name" value="" maxlength="50" placeholder="Your Last Name">
+      </fieldset>
+
+      <fieldset class="two-thirds first">
+        <label for="email" class="req">Email:</label><br>
+        <input type="text"  id="email" name="email" value="" maxlength="50" placeholder="youremail@domain.com">
+      </fieldset>
+
+      <fieldset class="third last">
+        <label for="phone">Phone Number:</label><br>
+        <input type="text"  id="phone" name="phone" value="" placeholder="123-456-7890">
+      </fieldset>
+
+      <fieldset class="half first">
+        <label for="method" class="req">How would you like to be contacted?</label><br>
+        <select  id="method" name="method">
+          <option value="Email" selected>Email</option>
+          <option value="Phone">Phone</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="full">
+        <label for="address">Address:</label><br>
+        <input type="text"  id="address" name="address" value="" maxlength="50" placeholder="123 Your Street">
+      </fieldset>
+
+      <fieldset class="half first">
+        <label for="city">City:</label><br>
+        <input type="text"  id="city" name="city" value="" maxlength="50" placeholder="Your City">
+      </fieldset>
+
+      <fieldset class="quarter">
+        <label for="state">State:</label><br>
+        <select  id="state" name="state">
+          <option value="">State</option>
+          <option value="AL">AL</option>
+          <option value="AK">AK</option>
+          <option value="AZ">AZ</option>
+          <option value="AR">AR</option>
+          <option value="CA">CA</option>
+          <option value="CO">CO</option>
+          <option value="CT">CT</option>
+          <option value="DE">DE</option>
+          <option value="FL">FL</option>
+          <option value="GA">GA</option>
+          <option value="HI">HI</option>
+          <option value="ID">ID</option>
+          <option value="IL">IL</option>
+          <option value="IN">IN</option>
+          <option value="IA">IA</option>
+          <option value="KS">KS</option>
+          <option value="KY">KY</option>
+          <option value="LA">LA</option>
+          <option value="ME">ME</option>
+          <option value="MD">MD</option>
+          <option value="MA">MA</option>
+          <option value="MI">MI</option>
+          <option value="MN">MN</option>
+          <option value="MS">MS</option>
+          <option value="MO">MO</option>
+          <option value="MT">MT</option>
+          <option value="NE">NE</option>
+          <option value="NV">NV</option>
+          <option value="NH">NH</option>
+          <option value="NJ">NJ</option>
+          <option value="NM">NM</option>
+          <option value="NY">NY</option>
+          <option value="NC">NC</option>
+          <option value="ND">ND</option>
+          <option value="OH">OH</option>
+          <option value="OK">OK</option>
+          <option value="OR">OR</option>
+          <option value="PA">PA</option>
+          <option value="RI">RI</option>
+          <option value="SC">SC</option>
+          <option value="SD">SD</option>
+          <option value="TN">TN</option>
+          <option value="TX">TX</option>
+          <option value="UT">UT</option>
+          <option value="VT">VT</option>
+          <option value="VA">VA</option>
+          <option value="WA">WA</option>
+          <option value="DC">DC</option>
+          <option value="WV">WV</option>
+          <option value="WI">WI</option>
+          <option value="WY">WY</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="quarter last">
+        <label for="zip">ZIP:</label><br>
+        <input type="text"  id="zip" name="zip" value="" maxlength="10" placeholder="12345">
+      </fieldset>
+
+      <fieldset class="full">
+        <label for="message" class="req">Message:</label><br>
+        <textarea  id="message" name="message" cols="60" rows="7" placeholder="Your message to us!"></textarea>
+      </fieldset>
+
+      <div class="form_buttons full">
+        <input type="submit" name="subcontact" value="Send Message">
+      </div>
+    </form>
+  </div>
+</section>

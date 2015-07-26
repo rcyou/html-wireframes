@@ -92,7 +92,7 @@ $(document).ready(function() {
 	});
 
 	// Toggle menu capability - Hide/show main menu
-	$('nav .menu').click(function() {
+	$('.menu').click(function() {
 		toggle_menu();
 	});
 

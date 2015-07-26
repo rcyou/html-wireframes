@@ -21,6 +21,9 @@ section, *[class*="section"] {
 	padding: 2%;
 }
 
+/* need to have padding styling rules for if grid class
+will not have nested children to eliminate side padding */
+
 *[class*="full"] { padding: 2%; }
 
 *[class*="first"] { margin-left: 0; }
