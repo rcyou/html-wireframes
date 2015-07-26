@@ -1,8 +1,15 @@
 *[class*="block"] {
 	text-align: center;
 	font-size: 2rem;
-	background-color: #AAA;
+	background-color: rgba(0,0,0,0.5);
 }
+
+/* for IE 8 support */
+/*
+*[class*="block"] { background-color: #AAA; }
+*[class*="block"] *[class*="block"] { background-color: #555; }
+*/
+
 *[class*="band"] { background-color: #888; }
 
 section, *[class*="section"] {
@@ -12,22 +19,26 @@ section, *[class*="section"] {
 	position: relative;
 }
 
+*[class*="holder"] { padding: 2%; }
+
 *[class*="half"],
 *[class*="third"],
 *[class*="quarter"],
 *[class*="two-thirds"],
 *[class*="three-fourths"] {
 	margin: 0 1%;
-	padding: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 
-/* need to have padding styling rules for if grid class
-will not have nested children to eliminate side padding */
-
-*[class*="full"] { padding: 2%; }
+*[class*="full"] {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
 
 *[class*="first"] { margin-left: 0; }
 *[class*="last"] { margin-right: 0; }
+
 *[class*="middle"] {
 	margin-right: 1%;
 	margin-left: 1%;
@@ -62,9 +73,6 @@ will not have nested children to eliminate side padding */
 	float: left;
 	width: 74.5%;
 }
-
-
-
 
 
 /* ==========================================================================
