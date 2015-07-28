@@ -447,7 +447,6 @@ div.viewer.active,
 div.viewer:active,
 a.viewer.active,
 a.viewer:active {
-	color: #000;
 	text-decoration: none;
 }
 
