@@ -30,7 +30,7 @@ img {
 	border: 0;
 	display: block;
 	max-width: 100%;
-	width: auto;
+	width: 100%;
 	height: auto;
 }
 
@@ -43,6 +43,7 @@ a:hover, a:focus { /* insert CSS here */ }
 h1, h2, h3 {
 	margin: 1rem 0;
 	padding: 0;
+	line-height: 1.05;
 }
 
 h1 { font-size: 3.2rem; }
@@ -51,8 +52,8 @@ h3 { font-size: 2.4rem; }
 
 /* add h4, h5, h6 */
 h4 { font-size: 2.1rem; }
-h5 { font-size: 1.6rem; }
-h6 { font-size: 1.4rem; }
+h5 { font-size: 1.8rem; }
+h6 { font-size: 1.6rem; }
 
 sup, sub {
 	font-size: 70%;
@@ -61,23 +62,11 @@ sup, sub {
 sup { vertical-align: super; }
 sub { vertical-align: sub; }
 
-label.req {
-	font-weight: bold;
-	padding-right: .5rem;
-}
-
-label.req:after {
-	content: '*';
-	color: #c00;
-	margin-left: .25rem;
-	font-family: sans-serif;
-}
-
 hr {
 	width: 100%;
 	height: 1px;
 	border: 0;
-	background-color: #ccc;
+	background-color: #BBB;
 }
 
 /* ==========================================================================
@@ -146,13 +135,9 @@ header {
 	position: relative;
 	z-index: 30;
 	overflow: visible;
-	background-color: #ccc;
+	background-color: #BBB;
 }
-header .logo {
-	/* insert CSS here */
-	background-color: #333;
-	min-height: 50px;
-}
+header .logo { /* insert CSS here */ }
 
 header .logo img {
 	display: block;
@@ -194,7 +179,7 @@ nav .top_menu li a {
 
 nav .top_menu li:last-child a { padding-right: 0; }
 
-/* nav .top_menu li.top_menu_active a ///* remove */
+/* nav .top_menu li.top_menu_active a */
 nav .top_menu li a:hover,
 nav.top_menu li a:focus {
 	/* insert CSS here */
@@ -210,7 +195,7 @@ nav .top_menu ul.sub {
 	height: auto;
 	padding: 0.5rem 0;
 	list-style: none;
-	background-color: #ccc;
+	background-color: #BBB;
 }
 
 nav .top_menu ul.sub li {
@@ -222,7 +207,7 @@ nav .top_menu ul.sub li a {
 	width: 100%;
 	height: auto;
 	padding: 0.5rem 2rem;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 }
 
 nav .top_menu ul.sub li a:hover,
@@ -242,13 +227,14 @@ main p {
 	margin: 2rem 0;
 }
 
+main ol, main ul {
+	list-style-position: outside;
+	padding-left: 3rem;
+}
+
 /* ==========================================================================
 Arbitrary Styles for Wireframes -- ! Delete these when done !
 ========================================================================== */
-
-.banner {
-	padding: 15% 0;
-}
 
 .subbanner {
 	padding: 15% 0;
@@ -259,11 +245,16 @@ Arbitrary Styles for Wireframes -- ! Delete these when done !
 	text-align: left;
 }
 
+.staff_info {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
 /* ==========================================================================
 Footer (Lower navigation, copyright, etc)
 ========================================================================== */
 footer {
-	background-color: #ccc;
+	background-color: #BBB;
 	font-size: 1.2rem;
 }
 
@@ -313,13 +304,30 @@ fieldset textarea {
 	height: 4.2rem;
 	margin: 0;
 	padding: 1rem;
-	border: 1px solid #ccc;
-	border-radius: 0.2rem;
-	-moz-border-radius: 0.2rem;
-	-webkit-border-radius: 0.2rem;
+	border: 1px solid #BBB;
+	border-radius: 0px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
 	font-size: 1.6rem;
 	font-family: inherit;
 	line-height: 3.4rem;
+}
+
+fieldset label {
+	width: 100%;
+	display: block;
+	margin-bottom: .4rem;
+}
+
+label.req {
+	font-weight: bold;
+}
+
+label.req:after {
+	content: '*';
+	color: #c00;
+	margin-left: .25rem;
+	font-family: sans-serif;
 }
 
 fieldset select { padding: 0 1rem; }
@@ -362,12 +370,12 @@ input.chk { display: none; }
 .form_buttons input[type="submit"],
 .form_buttons input[type="reset"] {
 	margin: 0 1rem 1rem 0;
-	padding: 1rem 2rem;
-	background-color: #eee;
-	border: 1px solid #ccc;
-	border-radius: 0.4rem;
-	-moz-border-radius: 0.4rem;
-	-webkit-border-radius: 0.4rem;
+	padding: 1.4rem 2rem;
+	background-color: #DDD;
+	border: 1px solid #BBB;
+	border-radius: 0.2rem;
+	-moz-border-radius: 0.2rem;
+	-webkit-border-radius: 0.2rem;
 	font-size: 1.6rem;
 	font-weight: normal;
 	cursor: pointer;
@@ -383,7 +391,8 @@ input.chk { display: none; }
 .form_buttons input[type="reset"]:hover,
 .form_buttons input[type="reset"]:focus,
 .form_buttons input[type="reset"]:active {
-	background-color: #aaa;
+	background-color: #AAA;
+	border-color: #888;
 }
 
 .form_buttons button:last-child,
@@ -405,6 +414,42 @@ Error Styles
 	color: #c00;
 }
 
+/* ==========================================================================
+ Category/Filter toggle viewer
+ ========================================================================== */
+.viewer_contain {
+	margin-bottom: 1.6rem;
+	padding-bottom: 1.6rem;
+	border-bottom: 1px solid #BBB;
+}
+
+span.viewer,
+div.viewer,
+a.viewer {
+	margin: 0 2rem 1rem 0;
+	cursor: pointer;
+	text-decoration: underline;
+	
+	display: inline-block;
+	padding: .5rem 1rem;
+	border: 1px solid #000;
+}
+
+span.viewer:hover,
+span.viewer:focus,
+div.viewer:hover,
+div.viewer:focus,
+a.viewer:hover,
+a.viewer:focus,
+span.viewer.active,
+span.viewer:active,
+div.viewer.active,
+div.viewer:active,
+a.viewer.active,
+a.viewer:active {
+	color: #000;
+	text-decoration: none;
+}
 
 /* ==========================================================================
 Desktop view (less than 1000 pixels) -- adjust for page/container max-width
@@ -436,6 +481,10 @@ Tablet view (less than 800 pixels) -- this may change based on breakpoint of nav
 	nav .top_menu li a {
 		width: 100%;
 		padding: 1% 0;
+	}
+
+	.staff_member {
+		width: 100%;
 	}
 }
 
