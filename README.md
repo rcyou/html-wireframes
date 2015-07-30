@@ -5,4 +5,4 @@ This is a kit I built using HTML, CSS, and a touch of jQuery for web design and 
 
 There is a simple, percentage-based grid system included that only goes as small as 25-percent but allows for nesting. There is also a generic global.css file, but I encourage you to put your themed or extended CSS in other files and link to them in the site's head.
 
-Creating templates utilizes the jQuery .load() method to include HTML partials where needed. This is only for quick-and-dirty prototyping and should not be used on a production-level site. Please use a true templating engine or language, such as Jekyll, PHP, and the like.
+Creating templates utilizes the jQuery $.ajax method with async set to false to include HTML partials where needed. This is only for quick-and-dirty prototyping and should not be used on a production-level site. Please use a true templating engine or language, such as Jekyll, PHP, and the like.
