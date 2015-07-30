@@ -84,6 +84,117 @@ function toggle_submenu(el) {
 	}
 }
 
+var custom_list_filter_settings;
+
+/**
+ * Filter a list of items by category or another identifying attribute. Function can
+ * accept custom settings as an argument, or will utilize the global object
+ * custom_list_filter_settings (can be set for individual pages as needed).
+ *
+ * @param object custom_settings. Settings object to merge with base settings
+ *
+ * @return null
+ */
+var list_filter = function(custom_settings) {
+	var settings = {
+		viewSelector: '.viewer',	//filter element to click on
+		viewDataAttr: 'category',	//filter element data- attribute
+		containSelector: '.viewer_items',	//list container element
+		containDataAttr: 'category',	//list container data- attribute
+		itemSelector: '.item',	//individual item element in list container
+		allValue: 'all',	//value of the typical "View All" filter
+		activeClass: 'active',	//CSS class for highlighting active filter element
+		useHash: false	//enable use of URL hash
+	};
+
+	// Merge in global custom_list_filter_settings object
+	if (typeof(custom_list_filter_settings) == 'object') {
+		$.extend(settings, custom_list_filter_settings);
+	}
+
+	// Merge in function-specific custom_settings object
+	if (typeof(custom_settings) == 'object') {
+		$.extend(settings, custom_settings);
+	}
+
+	// Check for container element
+	var contain_el = $(settings.containSelector);
+	if (contain_el.length === 0) {
+		return;
+	}
+
+	// Load active category, if available
+	if (settings.useHash === true) {
+		var hash_pos = document.location.hash.length;
+		var hash_active = false;
+
+		if (hash_pos > 0) {
+			var active_category = window.location.hash.substring(1);
+			var active_el = $(settings.viewSelector).filter('[data-' + settings.viewDataAttr + '="' + active_category + '"], #' + active_category);
+			if (active_el.length > 0) {
+				hash_active = true;
+				list_filter_show(active_el, contain_el, settings);
+			}
+		}
+
+		if (hash_active === false) {
+			var first_el = $(settings.viewSelector).filter(':first');
+			list_filter_show(first_el, contain_el, settings);
+		}
+	}
+
+	// Click event on filter elements
+	$(settings.viewSelector).click(function(event) {
+		event.preventDefault();
+		list_filter_show($(this), contain_el, settings);
+	});
+}
+
+/**
+ * Show a specified category based on the element clicked. Event binded by the above
+ * list_filter() function.
+ *
+ * @param object el jQuery element of clicked object
+ * @param object contain_el jQuery element of container
+ * @param object settings Settings object
+ *
+ * @return null
+ */
+var list_filter_show = function(el, contain_el, settings) {
+	var category = el.data(settings.viewDataAttr);
+
+	if (typeof(category) == 'undefined' || category === null || category.length === 0) {
+		category = el.prop('id');
+	}
+
+	if (typeof(category) == 'string' || typeof(category) == 'number') {
+		if (category == settings.allValue) {
+			$(settings.itemSelector, contain_el).show();
+		} else {
+			$(settings.itemSelector, contain_el).hide();
+			$(settings.itemSelector, contain_el).filter('[data-' + settings.containDataAttr + '="' + category + '"], .' + category).show();
+		}
+
+		$(settings.viewSelector + '.' + settings.activeClass).removeClass(settings.activeClass);
+		el.addClass(settings.activeClass);
+
+		if (settings.useHash === true) {
+			list_filter_hash(category);
+		}
+	}
+}
+
+/**
+ * Update the current page's URL with a hash matching the specified category.
+ *
+ * @param string category Category to apply to URL hash
+ *
+ * @return null
+ */
+var list_filter_hash = function(category) {
+	document.location.hash = '#' + category;
+}
+
 $(document).ready(function() {
 	// Resize window events
 	resize_window();
@@ -100,4 +211,7 @@ $(document).ready(function() {
 	$('nav .submenu').click(function() {
 		toggle_submenu($(this));
 	});
+
+	// Start list filter
+		list_filter();
 });

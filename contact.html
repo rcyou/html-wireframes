@@ -10,10 +10,11 @@
 
 	<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
 	
-	<meta class="external_files">
-	<script type="text/javascript">
-		$('.external_files').load( "./includes/js_css_files.html" );
-	</script>
+	<link rel="stylesheet" type="text/css" href="./css/global.reset.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/grid.css">
+	<link rel="stylesheet" type="text/css" href="./css/global.css">
+
+	<script type="text/javascript" src="./js/global.js"></script>
 </head>
 
 
@@ -22,19 +23,28 @@
 	<div class="page">
 		<header>
 			<script type="text/javascript">
-				$('header').load( "./includes/header.html" );
+				$.ajax({url: "./includes/header.html", async: false, dataType: "html",
+					success: function(result) {
+					$("header").html(result);
+				}});
 			</script>
 		</header>
 
 		<main class="main">
 			<script type="text/javascript">
-				$('.main').load( "./includes/form_content.html" );
+				$.ajax({url: "./includes/form_content.html", async: false, dataType: "html",
+					success: function(result) {
+					$(".main").html(result);
+				}});
 			</script>
 		</main>
 
 		<footer class="cf">
 			<script type="text/javascript">
-				$('footer').load( "./includes/footer.html" );
+				$.ajax({url: "./includes/footer.html", async: false, dataType: "html",
+					success: function(result) {
+					$("footer").html(result);
+				}});
 			</script>
 		</footer>
 	</div>
