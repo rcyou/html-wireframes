@@ -68,6 +68,7 @@
 section, *[class*="section"] {
 	overflow: hidden;
 	width: 100%;
+	float: left;
 	padding: 1% 0;
 	position: relative;
 }
@@ -75,6 +76,11 @@ section, *[class*="section"] {
 *[class*="holder"] { padding: 2%; }
 
 *[class*="image_holder"] { padding: 0; }
+
+/* Clearing elements */
+*[class*="only"] { clear: both; } /* Nothing else on either side */
+*[class*="no_left"] { clear: right; } /* Nothing to the left of element */
+*[class*="no_right"] { clear: left; } /* Nothing to the right of element */
 
 
 /* ==========================================================================

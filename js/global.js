@@ -2,6 +2,15 @@
 GLOBAL.JS
 Global JavaScript functions, events, and actions used throughout the website.
 ========================================================================== */
+function submenu_focus() {
+	 $(".sub li a").focus(function(){
+	    $('.sub').css('left', 0)
+	});
+	 $(".sub li a").blur(function(){
+	    $('.sub').css('left', "")
+	});
+}
+
 var mobile_view = false;
 
 function default_menu() {
@@ -195,6 +204,42 @@ var list_filter_hash = function(category) {
 	document.location.hash = '#' + category;
 }
 
+function init_videos() {
+	// Bind events on list links
+		$('.video_list a').on('click', function(event) {
+			if ($(this).hasClass('active')) {
+				event.preventDefault();
+				$(this).removeClass('active');
+			}
+			else {
+				event.preventDefault();
+				$('.active').removeClass('active');
+				$(this).addClass('active');
+			}
+		});
+
+		$('#vid_1').on('click', function() {
+			$.ajax({url: "./videos/vid1.html", dataType: "html",
+				success: function(result) {
+				$(".video").html(result);
+			}});
+		});
+
+		$('#vid_2').on('click', function() {
+			$.ajax({url: "./videos/vid2.html", dataType: "html",
+				success: function(result) {
+				$(".video").html(result);
+			}});
+		});
+
+		$('#vid_3').on('click', function() {
+			$.ajax({url: "./videos/vid3.html", dataType: "html",
+				success: function(result) {
+				$(".video").html(result);
+			}});
+		});
+}
+
 $(document).ready(function() {
 	// Resize window events
 	resize_window();
@@ -208,10 +253,15 @@ $(document).ready(function() {
 	});
 
 	// Hide/show submenu
-	$('nav .submenu').click(function() {
+	$('.submenu').click(function() {
 		toggle_submenu($(this));
 	});
 
 	// Start list filter
 		list_filter();
+
+	// Videos
+		init_videos();
+
+		submenu_focus();
 });

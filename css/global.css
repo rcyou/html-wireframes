@@ -67,6 +67,12 @@ hr {
 	height: 1px;
 	border: 0;
 	background-color: #BBB;
+	float: left;
+}
+
+header, main, footer {
+	float: left;
+	width: 100%;
 }
 
 /* ==========================================================================
@@ -146,75 +152,53 @@ header .logo img {
 	max-height: 100%;
 }
 
-header nav {
-	/* insert CSS here */
-	text-align: right;
-}
+header nav { /* insert CSS here */ }
 
 /* ==========================================================================
 Top Menu Navigation (drop-down menu)
 ========================================================================== */
-.menu, .submenu {
-	display: none;
+.menu,
+.submenu {
+	cursor: pointer;
+	text-align: right;
 }
-nav .top_menu {
-	position: relative;
-	z-index: 200;
-	margin: 0;
-	padding: 0;
+
+.menu { display: block; }
+
+.submenu {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.top_menu {
+	display: none;
+	width: 100%;
 	list-style: none;
 }
-nav .top_menu li {
+
+.top_menu li {
 	position: relative;
-	z-index: 200;
-	display: inline-block;
+	width: 100%;
 }
-nav .top_menu li a {
-	z-index: 200;
-	display: inline-block;
-	padding: 0 2rem;
-	font-size: 1.6rem;
+
+.top_menu li a {
+	width: 100%;
+	padding: 1% 0;
 	text-decoration: none;
 }
 
-nav .top_menu li:last-child a { padding-right: 0; }
+.top_menu li a:first-child { padding-top: 0; }
 
-/* nav .top_menu li.top_menu_active a */
-nav .top_menu li a:hover,
-nav.top_menu li a:focus {
-	/* insert CSS here */
-}
-
-nav .top_menu ul.sub {
-	position: absolute;
-	z-index: 201;
-	top: 3rem;
-	left: 0;
+.top_menu ul.sub {
 	display: none;
-	width: 18rem;
-	height: auto;
-	padding: 0.5rem 0;
-	list-style: none;
-	background-color: #BBB;
-}
-
-nav .top_menu ul.sub li {
 	width: 100%;
-	height: auto;
+	padding: 0;
+	background-color: #999;
 }
 
-nav .top_menu ul.sub li a {
-	width: 100%;
-	height: auto;
-	padding: 0.5rem 2rem;
-	font-size: 1.6rem;
-}
-
-nav .top_menu ul.sub li a:hover,
-nav .top_menu ul.sub li a:focus {
-	/* insert styling here */
-}
-
+.top_menu ul.sub li a { padding: 0; }
 
 /* ==========================================================================
 Body / Contents
@@ -224,13 +208,35 @@ main {
 }
 
 main p {
-	margin: 2rem 0;
+	margin: 1rem 0;
 }
 
 main ol, main ul {
 	list-style-position: outside;
 	padding-left: 3rem;
 }
+
+/* ==========================================================================
+Videos
+========================================================================== */
+.video {
+	width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 0px;
+    padding: 30px 0px 62.5%;
+}
+
+.video iframe,
+.video object,
+.video embed {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
 
 /* ==========================================================================
 Arbitrary Styles for Wireframes -- ! Delete these when done !
@@ -249,6 +255,8 @@ Arbitrary Styles for Wireframes -- ! Delete these when done !
 	padding-top: 0;
 	padding-bottom: 0;
 }
+
+.video_list .active { font-weight: bold; }
 
 /* ==========================================================================
 Footer (Lower navigation, copyright, etc)
@@ -401,6 +409,25 @@ input.chk { display: none; }
 	margin-right: 0;
 }
 
+/* ==========================================================================
+Link Buttons (links that look like buttons)
+========================================================================== */
+.link_button {
+	text-decoration: none;
+	padding: 1.4rem 2rem;
+	background-color: #DDD;
+	border: 1px solid #BBB;
+	border-radius: 0.2rem;
+	-moz-border-radius: 0.2rem;
+	-webkit-border-radius: 0.2rem;
+}
+
+.link_button:hover,
+.link_button:focus,
+.link_button:active {
+	background-color: #AAA;
+	border-color: #888;
+}
 
 /* ==========================================================================
 Error Styles
@@ -451,52 +478,88 @@ a.viewer:active {
 }
 
 /* ==========================================================================
-Desktop view (less than 1000 pixels) -- adjust for page/container max-width
+Screen greater than 1000 pixels
 ========================================================================== */
-@media all and (max-width:1000px) {
+@media all and (min-width:1000px) {
 	/* placeholder for media query styling */
 }
 
 /* ==========================================================================
-Tablet view (less than 800 pixels) -- this may change based on breakpoint of nav menu
+Screen greater than 801 pixels -- this may change based on breakpoint of nav menu
 ========================================================================== */
-@media all and (max-width:800px) {
+@media all and (min-width:801px) {
 	/* placeholder for media query styling */
-	
-	.menu {
-		display: block;
-		cursor: pointer;
-		text-align: right;
-	}
-
-	nav .top_menu {
+	.menu, .submenu {
 		display: none;
-		float: left;
-		width: 100%;
+	}
+	.top_menu {
+		display: block;
+		position: relative;
+		z-index: 200;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.top_menu li {
+		position: relative;
+		display: inline-block;
+		width: auto;
+	}
+	.top_menu li a {
+		display: inline-block;
+		padding: 0 2rem;
+		font-size: 1.6rem;
+		text-decoration: none;
 	}
 
-	nav .top_menu li { width: 100%; }
+	.top_menu li:last-child a { padding-right: 0; }
 
-	nav .top_menu li a {
-		width: 100%;
-		padding: 1% 0;
+	/* nav .top_menu li.top_menu_active a */
+	.top_menu li a:hover,
+	.top_menu li a:focus { /* insert CSS here */ }
+
+	/* Allow for submenu drop-downs on desktop */
+	/* ! Remove comment if submenus are needed */
+	/*
+	header section,
+	header .section,
+	header .container { overflow: visible; }
+	*/
+
+	/* CSS show submenu */
+	.top_menu li:hover a ~ ul.sub,
+	.top_menu li:focus a ~ ul.sub,
+	.top_menu li a:focus ~ ul.sub { left: 0; }
+
+
+	.top_menu ul.sub {
+		display: block;
+		position: absolute;
+		z-index: 500;
+		top: 2.25rem;
+		left: -99999px;
+		width: auto;
+		height: auto;
+		padding: 0 1rem;
+		list-style: none;
+		background-color: #999;
 	}
 
-	.staff_member {
+	.top_menu ul.sub li {
 		width: 100%;
+		height: auto;
 	}
-}
 
-/* ==========================================================================
-Mobile view (less than 520 pixels)
-========================================================================== */
-@media all and (max-width:520px) {
-	/* placeholder for media query styling */
-}
+	.top_menu ul.sub li a {
+		width: 100%;
+		height: auto;
+		white-space: nowrap;
+		padding: 0;
+		font-size: 1.6rem;
+	}
 
-/* ==========================================================================
-Mobile view (less than 440 pixels)
-========================================================================== */
-@media all and (max-width:440px) {
-	/* placeholder for media query styling */
+	.top_menu ul.sub li a:hover,
+	.top_menu ul.sub li a:focus {
+		/* insert styling here */
+	}
 }
