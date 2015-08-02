@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Grid - HTML Wireframes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-language" content="en">
+
+	<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="./css/global.reset.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/grid.css">
+	<link rel="stylesheet" type="text/css" href="./css/global.css">
+
+	<script type="text/javascript" src="./js/global.js"></script>
+</head>
+
+
+<body>
+
+	<div class="page">
+		<header>
+			<script type="text/javascript">
+				$.ajax({url: "./includes/header.html", async: false, dataType: "html",
+					success: function(result) {
+					$("header").html(result);
+				}});
+			</script>
+		</header>
+
+		<main class="main">
+			<script type="text/javascript">
+				$.ajax({url: "./includes/grid_content.html", async: false, dataType: "html",
+					success: function(result) {
+					$(".main").html(result);
+				}});
+			</script>
+		</main>
+
+		<footer class="cf">
+			<script type="text/javascript">
+				$.ajax({url: "./includes/footer.html", async: false, dataType: "html",
+					success: function(result) {
+					$("footer").html(result);
+				}});
+			</script>
+		</footer>
+	</div>
+</body>
+</html>

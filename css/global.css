@@ -498,6 +498,7 @@ Screen greater than 801 pixels -- this may change based on breakpoint of nav men
 		z-index: 200;
 		margin: 0;
 		padding: 0;
+		text-align: right;
 		list-style: none;
 	}
 	.top_menu li {
@@ -542,6 +543,7 @@ Screen greater than 801 pixels -- this may change based on breakpoint of nav men
 		height: auto;
 		padding: 0 1rem;
 		list-style: none;
+		text-align: left;
 		background-color: #999;
 	}
 
