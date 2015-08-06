@@ -79,7 +79,7 @@ header, main, footer {
 Clearfix
 ========================================================================== */
 
-/*
+
 .cf:before, .cf:after {
 	content: ' ';
 	display: table;
@@ -90,7 +90,7 @@ Clearfix
 .cf {
 	*zoom: 1;
 }
-*/
+
 
 
 /* ==========================================================================
@@ -142,6 +142,7 @@ header {
 	z-index: 30;
 	overflow: visible;
 	background-color: #BBB;
+	margin-bottom: 1%;
 }
 header .logo { /* insert CSS here */ }
 
@@ -203,13 +204,9 @@ Top Menu Navigation (drop-down menu)
 /* ==========================================================================
 Body / Contents
 ========================================================================== */
-main {
-	position: relative;
-}
+main { position: relative; }
 
-main p {
-	margin: 1rem 0;
-}
+main p { margin: 1rem 0; }
 
 main ol, main ul {
 	list-style-position: outside;
@@ -258,12 +255,18 @@ Arbitrary Styles for Wireframes -- ! Delete these when done !
 
 .video_list .active { font-weight: bold; }
 
+.grid {
+	background-color: #AAA;
+	height: 5rem;
+}
+
 /* ==========================================================================
 Footer (Lower navigation, copyright, etc)
 ========================================================================== */
 footer {
 	background-color: #BBB;
 	font-size: 1.2rem;
+	margin-top: 1%;
 }
 
 footer .address, footer .legal {
@@ -295,7 +298,7 @@ fieldset,
 .form_buttons {
 	float: left;
 	width: 100%;
-/*	padding-right: 2rem;*/
+	margin-bottom: 1.6rem;
 }
 
 fieldset.no_bottom,

@@ -1,16 +1,17 @@
+*[class*="full"],
+*[class*="half"],
+*[class*="third"],
+*[class*="quarter"],
+*[class*="two-thirds"],
+*[class*="three-fourths"] { float: left; }
+
 *[class*="half"],
 *[class*="third"],
 *[class*="quarter"],
 *[class*="two-thirds"],
 *[class*="three-fourths"] {
-	margin: 0 1%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-*[class*="full"] {
-	padding-top: 2%;
-	padding-bottom: 2%;
+	margin-left: 1%;
+	margin-right: 1%;
 }
 
 *[class*="first"] { margin-left: 0; }
@@ -21,41 +22,16 @@
 	margin-left: 1%;
 }
 
-*[class*="full"] {
-	float: left;
-	width: 100%;
-}
-
-*[class*="half"] {
-	float: left;
-	width: 49%;
-}
-
-*[class*="third"] {
-	float: left;
-	width: 32%;
-}
-
-*[class*="two-thirds"] {
-	float: left;
-	width: 66%;
-}
-
-*[class*="quarter"] {
-	float: left;
-	width: 23.5%;
-}
-
-*[class*="three-fourths"] {
-	float: left;
-	width: 74.5%;
-}
+*[class*="full"] { width: 100%; }
+*[class*="half"] { width: 49%; }
+*[class*="third"] { width: 32%; }
+*[class*="two-thirds"] { width: 66%; }
+*[class*="quarter"] { width: 23.5%; }
+*[class*="three-fourths"] { width: 74.5%; }
 
 /* Some conditional styles for ease of use */
 
-*[class*="block"] {
-	background-color: rgba(0,0,0,0.5);
-}
+*[class*="block"] { background-color: rgba(0,0,0,0.5); }
 
 /* for IE 8 support */
 /*
@@ -75,24 +51,20 @@ section, *[class*="section"] {
 
 *[class*="holder"] { padding: 2%; }
 
-*[class*="image_holder"] { padding: 0; }
-
-/* Clearing elements */
-*[class*="only"] { clear: both; } /* Nothing else on either side */
-*[class*="no_left"] { clear: right; } /* Nothing to the left of element */
-*[class*="no_right"] { clear: left; } /* Nothing to the right of element */
-
 
 /* ==========================================================================
 Mobile view (less than 440 pixels)
 ========================================================================== */
 @media all and (max-width:440px) {
+	*[class*="full"],
 	*[class*="half"],
 	*[class*="third"],
 	*[class*="quarter"],
 	*[class*="two-thirds"],
 	*[class*="three-fourths"] {
 		width: 100%;
-		margin: 0 0 2% 0;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 2%;
 	}
 }
