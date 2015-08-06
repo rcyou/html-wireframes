@@ -5,29 +5,17 @@
 *[class*="two-thirds"],
 *[class*="three-fourths"] { float: left; }
 
-*[class*="half"],
-*[class*="third"],
-*[class*="quarter"],
-*[class*="two-thirds"],
-*[class*="three-fourths"] {
-	margin-left: 1%;
-	margin-right: 1%;
-}
-
-*[class*="first"] { margin-left: 0; }
-*[class*="last"] { margin-right: 0; }
-
-*[class*="middle"] {
-	margin-right: 1%;
-	margin-left: 1%;
-}
-
-*[class*="full"] { width: 100%; }
-*[class*="half"] { width: 49%; }
-*[class*="third"] { width: 32%; }
-*[class*="two-thirds"] { width: 66%; }
-*[class*="quarter"] { width: 23.5%; }
-*[class*="three-fourths"] { width: 74.5%; }
+*[class*="full"],
+	*[class*="half"],
+	*[class*="third"],
+	*[class*="quarter"],
+	*[class*="two-thirds"],
+	*[class*="three-fourths"] {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 2%;
+	}
 
 /* Some conditional styles for ease of use */
 
@@ -51,20 +39,38 @@ section, *[class*="section"] {
 
 *[class*="holder"] { padding: 2%; }
 
-
 /* ==========================================================================
-Mobile view (less than 440 pixels)
+Screen size is greater than 540 pixels
 ========================================================================== */
-@media all and (max-width:440px) {
+@media all and (min-width: 540px) {
 	*[class*="full"],
 	*[class*="half"],
 	*[class*="third"],
 	*[class*="quarter"],
 	*[class*="two-thirds"],
+	*[class*="three-fourths"] { margin-bottom: 0; }
+
+	*[class*="half"],
+	*[class*="third"],
+	*[class*="quarter"],
+	*[class*="two-thirds"],
 	*[class*="three-fourths"] {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-		margin-bottom: 2%;
+		margin-left: 1%;
+		margin-right: 1%;
 	}
+
+	*[class*="first"] { margin-left: 0; }
+	*[class*="last"] { margin-right: 0; }
+
+	*[class*="middle"] {
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+
+	*[class*="full"] { width: 100%; }
+	*[class*="half"] { width: 49%; }
+	*[class*="third"] { width: 32%; }
+	*[class*="two-thirds"] { width: 66%; }
+	*[class*="quarter"] { width: 23.5%; }
+	*[class*="three-fourths"] { width: 74.5%; }
 }
